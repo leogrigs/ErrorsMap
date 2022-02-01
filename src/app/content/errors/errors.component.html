@@ -1,0 +1,27 @@
+<!-- <div class="container main">
+    <div *ngIf="(entries$ | async) as entries">
+        <mat-accordion class="example-headers-align" multi='false'>
+            <div *ngFor="let entry of entries.entries">
+                <app-entry [entry]="entry"></app-entry><br>
+            </div>
+        </mat-accordion>
+    </div>
+</div> -->
+
+<div class="container main">
+
+    <div>
+        <input [(ngModel)]="filter" type="text" class="form-control">
+    </div>
+
+
+    <div *ngIf="_entriesAr">
+        <mat-accordion class="example-headers-align" multi='false'>
+            <div *ngFor="let entry of filteredEntries">
+                <app-entry [entry]="entry"></app-entry><br>
+            </div>
+        </mat-accordion>
+    </div>
+</div>
+
+
