@@ -15,7 +15,8 @@ import { HomeComponent } from './content/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { EntryGuideComponent } from './content/entry-guide/entry-guide.component';
 import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button';
+import { InfoComponent } from './content/info/info.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MatButtonModule } from '@angular/material/button'
     EntryComponent,
     GuidesComponent,
     HomeComponent,
-    EntryGuideComponent
+    EntryGuideComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

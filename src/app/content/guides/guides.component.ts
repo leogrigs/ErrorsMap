@@ -18,14 +18,14 @@ export class GuidesComponent implements OnInit {
   _filterBy: string = '';
   
   constructor(private contentStackService: ContentStackService) { 
+  }
+  
+  ngOnInit(): void {
     this.entries$ =this.contentStackService.getAllEntriesGuide();
     this.entries$.subscribe(entries => {
       this._entriesAr = entries.entries;
       this.filteredEntries = entries.entries;
     });
-  }
-
-  ngOnInit(): void {
   }
 
   set filter(value: string){

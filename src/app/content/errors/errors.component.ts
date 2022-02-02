@@ -18,14 +18,14 @@ export class ErrorsComponent implements OnInit {
   _filterBy: string = '';
   
   constructor(private contentStackService: ContentStackService) { 
+  }
+
+  ngOnInit(): void {
     this.entries$ =this.contentStackService.getAllEntriesError()
     this.entries$.subscribe(entries => {
       this._entriesAr = entries.entries;
       this.filteredEntries = entries.entries;
     });
-  }
-
-  ngOnInit(): void {
   }
 
   set filter(value: string){

@@ -1,5 +1,6 @@
 footer h3 {
-    font-weight: 500;
+    font-size: small;
+    font-weight: 400;
     color: azure;
     letter-spacing: .1rem;
 }
