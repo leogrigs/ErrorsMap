@@ -14,8 +14,10 @@
 
 .data, .title{
     margin: 0 1rem;
+    color: rgb(75, 75, 75);
+    font-size: small;
 }
 
-.error_image {
-    margin-bottom: 1rem;
+.title{
+    font-weight: 500;
 }

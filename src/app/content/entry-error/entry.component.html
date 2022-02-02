@@ -1,0 +1,46 @@
+<mat-expansion-panel>
+
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <p class="title">
+                {{entry?.title}}
+            </p>
+        </mat-panel-title>
+
+        <p class="data">
+            {{entry?.created_at?.substring(0,10)}}
+        </p>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+
+        <!-- Error Infos -->
+        <div *ngIf="entry?.error_image || entry?.error_description">
+            <h2>Error</h2>
+            <div *ngIf="entry?.error_image" class="error_image">
+                <img src={{entry?.error_image?.url}}>
+            </div>
+            <div *ngIf="entry?.error_description" class="error_desc">
+                <p>{{entry?.error_description}}</p>
+            </div>
+            <br>
+            <hr><br>
+        </div>
+
+        <!-- Solution -->
+        <div *ngIf="entry?.steps?.length!=0; else noSolutions">
+            <h2>Solution</h2>
+
+            <div *ngFor="let step of entry?.steps">
+                <h3 style="font-weight: bold;">{{step?.step?.step_name}}</h3>
+                <p *ngIf="step?.step?.step_description">{{step?.step?.step_description}}</p>
+                <img *ngIf="step?.step?.step_image?.url" src={{step?.step?.step_image?.url}}>
+            </div>
+        </div>
+
+        <ng-template #noSolutions>
+            <h2>No solutions available!</h2>
+        </ng-template>
+
+    </ng-template>
+</mat-expansion-panel>

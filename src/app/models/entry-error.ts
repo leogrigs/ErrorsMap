@@ -1,5 +1,4 @@
-import { Image } from "./image";
-import { Step } from "./step";
+import { Image, Step } from "./entries";
 
 export interface Entry {
     title: string;

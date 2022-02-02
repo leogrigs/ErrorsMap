@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Entries } from '../models/entries';
+import { Entries, EntriesGuide } from '../models/entries';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,15 +18,18 @@ export class ContentStackService {
   constructor(private http: HttpClient) { }
 
 
-  getAllEntries(): Observable<Entries> {
+  getAllEntriesError(): Observable<Entries> {
     
     let url = 'https://cdn.contentstack.io/v3/content_types/error/entries?environment=dev';
 
     return this.http.get<Entries>(url, httpOptions);
   }
 
-  getAllTitles() {
+  getAllEntriesGuide(): Observable<EntriesGuide> {
     
+    let url = 'https://cdn.contentstack.io/v3/content_types/guide/entries?environment=dev';
+
+    return this.http.get<EntriesGuide>(url, httpOptions);
   }
 
 }

@@ -1,6 +1,37 @@
+header{
+    opacity: 0.9;
+}
+
 header h1 {
-    font-size: large;
+    font-size: x-large;
     font-weight: 500;
     color: azure;
-    letter-spacing: .1rem;
+}
+
+.teste{
+    margin: 0;
+}
+
+p {
+    cursor: pointer;
+    float: left;
+}
+
+.home{
+    cursor: pointer;
+    font-size: x-large;
+    color: white;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.home:hover{
+    padding-bottom: .3rem;
+    animation-name: example;
+    animation-duration: 0.25s;
+    border-bottom: 2px solid white;
+}
+
+.logo {
+    border-radius: 50%;
+    width: 50px;
 }

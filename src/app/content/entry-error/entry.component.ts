@@ -1,5 +1,5 @@
 import { Component,  Input, OnInit } from '@angular/core';
-import { Entry } from 'src/app/models/entry';
+import { Entry } from 'src/app/models/entry-error';
 
 @Component({
   selector: 'app-entry',

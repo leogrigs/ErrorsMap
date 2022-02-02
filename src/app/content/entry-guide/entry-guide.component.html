@@ -8,28 +8,25 @@
         </mat-panel-title>
 
         <p class="data">
-            {{entry?.created_at?.substring(0,9)}}
+            {{entry?.created_at?.substring(0,10)}}
         </p>
     </mat-expansion-panel-header>
 
     <ng-template matExpansionPanelContent>
 
-        <!-- Error Infos -->
-        <div *ngIf="entry?.error_image || entry?.error_description">
-            <h2>Error</h2>
-            <div *ngIf="entry?.error_image" class="error_image">
-                <img src={{entry?.error_image?.url}}>
-            </div>
-            <div *ngIf="entry?.error_description" class="error_desc">
-                <p>{{entry?.error_description}}</p>
+        <!-- Guide Infos -->
+        <div *ngIf="entry?.guide_description">
+            <h2>Guide</h2>
+            <div *ngIf="entry?.guide_description" class="guide_desc">
+                <p>{{entry?.guide_description}}</p>
             </div>
             <br>
             <hr><br>
         </div>
 
-        <!-- Solution -->
+        <!-- Guide -->
         <div *ngIf="entry?.steps?.length!=0; else noSolutions">
-            <h2>Solution</h2>
+            <h2>Tutorial</h2>
 
             <div *ngFor="let step of entry?.steps">
                 <h3 style="font-weight: bold;">{{step?.step?.step_name}}</h3>
@@ -39,7 +36,7 @@
         </div>
 
         <ng-template #noSolutions>
-            <h2>No Solutions Avaible!</h2>
+            <h2>No guides available!</h2>
         </ng-template>
 
     </ng-template>

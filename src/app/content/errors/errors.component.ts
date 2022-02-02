@@ -1,8 +1,7 @@
-import { ElementSchemaRegistry } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Entries } from 'src/app/models/entries';
-import { Entry } from 'src/app/models/entry';
+import { Entry } from 'src/app/models/entry-error';
 import { ContentStackService } from 'src/app/services/content-stack.service';
 
 @Component({
@@ -19,7 +18,7 @@ export class ErrorsComponent implements OnInit {
   _filterBy: string = '';
   
   constructor(private contentStackService: ContentStackService) { 
-    this.entries$ =this.contentStackService.getAllEntries()
+    this.entries$ =this.contentStackService.getAllEntriesError()
     this.entries$.subscribe(entries => {
       this._entriesAr = entries.entries;
       this.filteredEntries = entries.entries;
